@@ -1,0 +1,1 @@
+au BufRead,BufNewFile *.tdl setf tdl
