@@ -136,7 +136,7 @@ nnoremap <s-m-l> <c-w>l
 
 " Append datetime to the end of the line
 nnoremap <m-d> $A<C-R>=strftime(" - %Y-%m-%d %a %I:%M %p")<CR><Esc>
-
+nnoremap <m-c> i✅
 
 " Go to beginning of the line and remove everything
 nnoremap <Leader>C _C
