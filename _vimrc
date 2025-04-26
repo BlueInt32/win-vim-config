@@ -53,10 +53,10 @@ let g:airline_theme='jet'
 
 set smartcase " use case sensitive only when there are actual UPPER case in the search. otherwise, case insensitive
 
-" CURSOR
+" CURSOR & HOW IT BLINKS
 set guicursor=n-v-c:block-Cursor
-set guicursor+=i-ci:ver20-Cursor-blinkwait100-blinkon140-blinkoff140
-set guicursor+=n-v-c:blinkwait1500-blinkon300-blinkoff300
+set guicursor+=i-ci:ver20-Cursor-blinkwait500-blinkon100-blinkoff100
+set guicursor+=n-v-c:blinkwait500-blinkon100-blinkoff100
 
 " WINDOW
 winpos 400 120			 " position of window
@@ -96,10 +96,10 @@ nnoremap <Leader>x :Ex<CR>
 nnoremap <c-x> :Ex<Space>d:/dev/notes/<cr>
 
 " source vimrc to update new config
-nnoremap <Leader>so :so ~/_vimrc<CR> <bar> :echo '_vimrc reloaded'<CR>
+nnoremap <Leader>so :so ~/vimfiles/_vimrc<CR> <bar> :echo '_vimrc reloaded'<CR>
 
 " open vimrc for edition
-nnoremap <Leader>conf :e ~/_vimrc<CR>
+nnoremap <Leader>conf :e ~/vimfiles/_vimrc<CR>
 " open default session file for edition
 nnoremap <Leader>session :e d:/dev/notes/session.vim<CR>
 
@@ -113,16 +113,6 @@ nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>n :enew<cr>
 nnoremap <leader>a <c-^>
 nnoremap <leader>vs :vs<cr>
-nnoremap <c-1> :b1<cr>
-nnoremap <c-2> :b2<cr>
-nnoremap <leader>3 :b3<cr>
-nnoremap <leader>4 :b4<cr>
-nnoremap <leader>5 :b5<cr>
-nnoremap <leader>6 :b6<cr>
-nnoremap <leader>7 :b7<cr>
-nnoremap <leader>8 :b8<cr>
-nnoremap <leader>9 :b9<cr>
-nnoremap <leader>0 :b0<cr>
 " create a quick list containing all the buffers
 " [Obsolete] nnoremap <Leader>b1 :call setqflist(map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), '{"bufnr": v:val}'))<CR> <bar> :copen<CR>
 
@@ -136,12 +126,12 @@ nnoremap <c-h> :set hlsearch!<CR>
 " toggle relative number
 nnoremap <leader>r :set relativenumber!<CR>
 
-
-" navigation accross splits
-nnoremap <Leader>wj <c-w>j
-nnoremap <Leader>wh <c-w>h
-nnoremap <Leader>wk <c-w>k
-nnoremap <Leader>wl <c-w>l
+"
+" " navigation accross splits
+nnoremap <s-m-j> <c-w>j
+nnoremap <s-m-h> <c-w>h
+nnoremap <s-m-k> <c-w>k
+nnoremap <s-m-l> <c-w>l
 
 
 " Append datetime to the end of the line
@@ -184,10 +174,11 @@ let g:quickmenu_disable_nofile=0
 " QUICK MENU SETUP
 " first install quickMenu like explained here https://github.com/skywind3000/quickmenu.vim?tab=readme-ov-file#install
 call g:quickmenu#reset()
-call g:quickmenu#append('# Notes', '')
+call g:quickmenu#append('# TP', '')
+call g:quickmenu#append('tp 4', ':e d:/dev/notes/tp/4.tdl', 'select item 2.1')
+call g:quickmenu#append('tp 4 - done', ':e d:/dev/notes/tp/4-done.tdl', 'select item 2.1')
+call g:quickmenu#append('tp 5', ':e d:/dev/notes/tp/5.tdl', 'select item 2.1')
+call g:quickmenu#append('# VStack', '')
 call g:quickmenu#append('vstack 3.1', ':e d:/dev/notes/vstack/current-v3.1.tdl', 'select item 2.1')
-call g:quickmenu#append('vstack 3.1 [done]', ':e d:/dev/notes/vstack/current-v3.1-done.tdl', 'select item 2.1')
+call g:quickmenu#append('vstack 3.1 - done', ':e d:/dev/notes/vstack/current-v3.1-done.tdl', 'select item 2.1')
 call g:quickmenu#append('vstack 3.2', ':e d:/dev/notes/vstack/next-v3.2.tdl', 'select item 2.1')
-" call g:quickmenu#append('# Dev','')
-" call g:quickmenu#append('Vstack front', ':Ex d:/dev/own/vstack-v3/vstack.client', 'select item 1.1')
-" call g:quickmenu#append('Vstack tests', ':Ex d:/dev/own/vstack-v3/integration-testing/karate-tests/src/test/java', 'select item 1.1')

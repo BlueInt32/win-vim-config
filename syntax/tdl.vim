@@ -36,6 +36,7 @@ hi def link tdlH2 PreProc
 hi def link tdlComments Comment
 hi def link tdlFeature Special
 hi def link tdlRefacto Function
+" hi def link tdlRefacto tdlTag
 hi def link tdlBug javaScriptError
 hi def link tdlBackticks Constant
 hi def link tdlBrackets Comment

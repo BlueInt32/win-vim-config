@@ -554,6 +554,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("scalaConstructorSpecializer", s:yellow, "", "")
     call <SID>X("scalaBackTick", s:blue, "", "")
 
+    call <SID>X("tdlTag", s:black, s:orange, "bold")
+
     " Git
     call <SID>X("gitFile", s:orange, "", "")
     call <SID>X("gitcommitSummary", "", "", "bold")
