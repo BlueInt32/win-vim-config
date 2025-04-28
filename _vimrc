@@ -36,14 +36,14 @@ set noswapfile
 set guioptions-=m               " remove menubar (notice the -=)
 set guioptions-=T               " remove toolbar (notice the -=)
 set guioptions-=l
-cd d:/dev/notes/
+cd c:/dev/notes/
 set ignorecase
 
 
 " APPEARANCE
 " Patched fonts for powerline at https://github.com/powerline/fonts. Use :set guifont=* and set guifont? to choose
 "   from installed fonts
-set guifont=DejaVu_Sans_Mono_for_Powerline:h16:cANSI
+set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
 " Get color schemes at https://github.com/rafi/awesome-vim-colorschemes/tree/master?tab=readme-ov-file#color-schemes
 :colo afterglow
 " Airline themes at https://github.com/vim-airline/vim-airline-themes/tree/master/autoload/airline/themes
@@ -87,13 +87,13 @@ let g:netrw_altv = 1
 let mapleader = "\<space>"
 
 " open all files in pwd in buffers
-nnoremap <Leader>cd :cd d:\dev\notes\
+nnoremap <Leader>cd :cd c:\dev\notes\
 nnoremap <Leader>e :e<Space>
 nnoremap <Leader>p :pwd<cr>
 
 " launch netrw
 nnoremap <Leader>x :Ex<CR>
-nnoremap <c-x> :Ex<Space>d:/dev/notes/<cr>
+nnoremap <c-x> :Ex<Space>c:/dev/notes/<cr>
 
 " source vimrc to update new config
 nnoremap <Leader>so :so ~/vimfiles/_vimrc<CR> <bar> :echo '_vimrc reloaded'<CR>
@@ -101,7 +101,7 @@ nnoremap <Leader>so :so ~/vimfiles/_vimrc<CR> <bar> :echo '_vimrc reloaded'<CR>
 " open vimrc for edition
 nnoremap <Leader>conf :e ~/vimfiles/_vimrc<CR>
 " open default session file for edition
-nnoremap <Leader>session :e d:/dev/notes/session.vim<CR>
+nnoremap <Leader>session :e c:/dev/notes/session.vim<CR>
 
 " Buffers management
 " next/previous buffer (inverted because yes)
@@ -141,9 +141,9 @@ nnoremap <m-c> i✅
 " Go to beginning of the line and remove everything
 nnoremap <Leader>C _C
 
-" Save session into d:/dev/notes/session.vim
-nnoremap <c-s> :mksession! d:/dev/notes/session.vim<CR> <bar> :echo 'Saved session in session.vim'<CR>
-nnoremap <c-l> :so d:/dev/notes/session.vim<CR> <bar> :echo 'Loaded session from session.vim'<CR>
+" Save session into c:/dev/notes/session.vim
+" nnoremap <c-s> :mksession! c:/dev/notes/session.vim<CR> <bar> :echo 'Saved session in session.vim'<CR>
+" nnoremap <c-l> :so c:/dev/notes/session.vim<CR> <bar> :echo 'Loaded session from session.vim'<CR>
 
 " Smart search/replace shortcut
 nnoremap <c-è> :set nohlsearch<cr> <bar> :%s///gc<left><left><left><left>
@@ -174,11 +174,7 @@ let g:quickmenu_disable_nofile=0
 " QUICK MENU SETUP
 " first install quickMenu like explained here https://github.com/skywind3000/quickmenu.vim?tab=readme-ov-file#install
 call g:quickmenu#reset()
-call g:quickmenu#append('# TP', '')
-call g:quickmenu#append('tp 4', ':e d:/dev/notes/tp/4.tdl', 'select item 2.1')
-call g:quickmenu#append('tp 4 - done', ':e d:/dev/notes/tp/4-done.tdl', 'select item 2.1')
-call g:quickmenu#append('tp 5', ':e d:/dev/notes/tp/5.tdl', 'select item 2.1')
-call g:quickmenu#append('# VStack', '')
-call g:quickmenu#append('vstack 3.1', ':e d:/dev/notes/vstack/current-v3.1.tdl', 'select item 2.1')
-call g:quickmenu#append('vstack 3.1 - done', ':e d:/dev/notes/vstack/current-v3.1-done.tdl', 'select item 2.1')
-call g:quickmenu#append('vstack 3.2', ':e d:/dev/notes/vstack/next-v3.2.tdl', 'select item 2.1')
+call g:quickmenu#append('# Notes', '')
+call g:quickmenu#append('Daily', ':e c:/dev/notes/daily.tdl', 'select item 2.1')
+call g:quickmenu#append('Archives', ':e c:/dev/notes/archives.tdl', 'select item 2.1')
+call g:quickmenu#append('Solidified', ':e c:/dev/notes/solidified.tdl', 'select item 2.1')

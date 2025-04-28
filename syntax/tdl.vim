@@ -14,34 +14,36 @@ endif
 syn case ignore
 
 " keywords
-syn keyword tdlRefacto refac[to] perf[ormance] tech[nical] contained
-syn keyword tdlFeature feat[ure] contained
-syn keyword tdlBug bug contained
-
-syn keyword noteskeywords wait sf meeting sfmeeting nico
+syn keyword tdlOrange refac[to] perf[ormance] tech[nical] contained sf sfmeeting
+syn keyword tdlSoftBlue feat[ure] contained wait[ing] hr ISN buffer doc
+syn keyword tdlRed bug contained flow1 flow2 flow3 flow4 flow5 flow6 review
+syn keyword tdlGreen sadan nico[las] rudy francois amit diw[akar] justin
+syn keyword tdlPink gvim
 
 syn match tdlH1 /===[^`]\+===/
 syn match tdlH2 /\*\*[^`]\+\*\*/
 
 syn match tdlComments /^\/\/.*/
 syn match tdlBackticks /`[^`]\+`/
-syn match tdlBrackets /\[[^`]\+\]/ contains=tdlRefacto,tdlFeature,tdlBug
+syn match tdlBrackets /\[[^`]\+\]/ contains=tdlOrange,tdlSoftBlue,tdlRed,tdlGreen,tdlPink
 syn match tdlSubs /^\s\+-.*$/
 syn match tdlLinks /http[^`]\+/
-" syn region notesBrackets start=/[/ end=/]/ transparent contains=tdlFeature,tdlRefacto,tdlBug
+" syn region notesBrackets start=/[/ end=/]/ transparent contains=tdlSoftBlue,tdlOrange,tdlRed
 
 " hi def link noteskeywords Error
 hi def link tdlH1 String
 hi def link tdlH2 PreProc
 hi def link tdlComments Comment
-hi def link tdlFeature Special
-hi def link tdlRefacto Function
-" hi def link tdlRefacto tdlTag
-hi def link tdlBug javaScriptError
+hi def link tdlSoftBlue Special
+hi def link tdlOrange Function
+" hi def link tdlOrange tdlTag
+hi def link tdlRed javaScriptError
 hi def link tdlBackticks Constant
 hi def link tdlBrackets Comment
 hi def link tdlLinks Include
 hi def link tdlSubs Comment
+hi def link tdlGreen tdlGreen
+hi def link tdlPink Statement
 
 let b:current_syntax = 'tdl'
 

@@ -25,6 +25,7 @@ let s:red = "ac4142"
 let s:orange = "e87d3e"
 let s:yellow = "e5b567"
 let s:green = "b4c973"
+let s:greenHL = "22c55e"
 let s:blue = "6c99bb"
 let s:wine = "b05279"
 let s:purple = "9e86c8"
@@ -555,6 +556,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("scalaBackTick", s:blue, "", "")
 
     call <SID>X("tdlTag", s:black, s:orange, "bold")
+    call <SID>X("tdlGreen", s:greenHL, "", "")
 
     " Git
     call <SID>X("gitFile", s:orange, "", "")
