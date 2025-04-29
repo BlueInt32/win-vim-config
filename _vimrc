@@ -43,7 +43,7 @@ set ignorecase
 " APPEARANCE
 " Patched fonts for powerline at https://github.com/powerline/fonts. Use :set guifont=* and set guifont? to choose
 "   from installed fonts
-set guifont=DejaVu_Sans_Mono_for_Powerline:h16:cANSI
+set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
 " Get color schemes at https://github.com/rafi/awesome-vim-colorschemes/tree/master?tab=readme-ov-file#color-schemes
 :colo afterglow
 " Airline themes at https://github.com/vim-airline/vim-airline-themes/tree/master/autoload/airline/themes
@@ -55,8 +55,8 @@ set smartcase " use case sensitive only when there are actual UPPER case in the 
 
 " CURSOR & HOW IT BLINKS
 set guicursor=n-v-c:block-Cursor
-set guicursor+=i-ci:ver20-Cursor-blinkwait500-blinkon100-blinkoff100
-set guicursor+=n-v-c:blinkwait500-blinkon100-blinkoff100
+set guicursor+=i-ci-c:ver20-Cursor-blinkwait500-blinkon200-blinkoff200
+set guicursor+=n-v:blinkwait500-blinkon300-blinkoff300
 
 " WINDOW
 winpos 400 120			 " position of window
